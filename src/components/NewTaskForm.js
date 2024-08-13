@@ -17,18 +17,14 @@ function NewTaskForm({ categories, onTaskFormSubmit }) {
 
   return (
     <form className="new-task-form" onSubmit={handleSubmit}>
-      <label htmlFor="task-details">Details</label>
-      <input
-        id="task-details"
-        type="text"
-        placeholder="Details"
-        value={text}
-        onChange={(event) => setText(event.target.value)}
+      <input 
+        type="text" 
+        placeholder="New task details" 
+        value={text} 
+        onChange={(event) => setText(event.target.value)} 
       />
-      <label htmlFor="task-category">Category</label>
-      <select
-        id="task-category"
-        value={category}
+      <select 
+        value={category} 
         onChange={(event) => setCategory(event.target.value)}
       >
         {categories.map((cat) => (

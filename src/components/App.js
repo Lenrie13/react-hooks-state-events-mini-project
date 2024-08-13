@@ -20,14 +20,26 @@ function App() {
     setTasks([...tasks, newTask]);
   };
 
-  const filteredTasks = selectedCategory === "All" ? tasks : tasks.filter(task => task.category === selectedCategory);
+  const filteredTasks = selectedCategory === "All" 
+    ? tasks 
+    : tasks.filter(task => task.category === selectedCategory);
 
   return (
     <div className="App">
       <h1>Task List</h1>
-      <CategoryFilter categories={CATEGORIES} selectedCategory={selectedCategory} onCategoryChange={handleCategoryChange} />
-      <TaskList tasks={filteredTasks} onDeleteTask={handleDeleteTask} />
-      <NewTaskForm categories={CATEGORIES.filter(category => category !== "All")} onTaskFormSubmit={handleAddTask} />
+      <CategoryFilter 
+        categories={CATEGORIES} 
+        selectedCategory={selectedCategory} 
+        onCategoryChange={handleCategoryChange} 
+      />
+      <TaskList 
+        tasks={filteredTasks} 
+        onDeleteTask={handleDeleteTask} 
+      />
+      <NewTaskForm 
+        categories={CATEGORIES.filter(category => category !== "All")} 
+        onTaskFormSubmit={handleAddTask} 
+      />
     </div>
   );
 }
